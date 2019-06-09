@@ -2,6 +2,11 @@
 #include "display.h"
 #include "controls.h"
 
+//PA4 is chip select defined in display
+//PA3 id reset pin defined in display
+//PA5 is sclock
+//PA6 is MISO
+//PA7 is MOSI
 const int voltagePin = PA0;
 const int leftPin = PA8;
 const int rightPin = PA9;

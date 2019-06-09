@@ -15,6 +15,9 @@ void Display::set_background(){
   tft.drawCircle(NAV_BALL_CENTER_X_CORD, NAV_BALL_CENTER_Y_CORD, 200, RA8875_WHITE);
   tft.drawCircle(NAV_BALL_CENTER_X_CORD, NAV_BALL_CENTER_Y_CORD, 201, RA8875_WHITE);
   tft.drawCircle(NAV_BALL_CENTER_X_CORD, NAV_BALL_CENTER_Y_CORD, 202, RA8875_WHITE);
+
+  //just messing around to figutr out how the graphics work
+  tft.drawCurve( 200, 300, 50, 30, 40, RA8875_GREEN);
 }
 void Display::Update(){
   if(!dead_mans_switch){
