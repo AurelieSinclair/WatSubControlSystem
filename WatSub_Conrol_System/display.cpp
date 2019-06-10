@@ -75,6 +75,12 @@ void Display::draw_yaw_rudder(float yaw_angle){
   tft.drawLine(YAW_RUDDER_X_CORD -2, YAW_RUDDER_Y_CORD, round( YAW_RUDDER_X_CORD +( YAW_RUDDER_LEN * cos(yaw_angle))) -2,
                round( YAW_RUDDER_Y_CORD + YAW_RUDDER_LEN * sin(yaw_angle)),RA8875_BLUE);
 }
+//btween 7 degrees up and down max approx
+void Display::draw_pitch_rudder(float pitch_angle){
+  //make pretty
+  tft.drawLine(PITCH_RUDDER_X_CORD, PITCH_RUDDER_Y_CORD, round( PITCH_RUDDER_X_CORD +( PITCH_RUDDER_LEN * sin(pitch_angle))),
+               round( PITCH_RUDDER_Y_CORD + PITCH_RUDDER_LEN * cos(pitch_angle)),RA8875_GREEN);
+}
   
 void Display::write_data(float Vbat) {
   tft.setCursor(250, 0);

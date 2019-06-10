@@ -9,9 +9,12 @@
 #define NAV_BALL_CENTER_X_CORD 200
 #define NAV_BALL_CENTER_Y_CORD 200
 #define NAV_BALL_RADIUS 200
-#define YAW_RUDDER_X_CORD 500
+#define YAW_RUDDER_X_CORD 550
 #define YAW_RUDDER_Y_CORD 100
 #define YAW_RUDDER_LEN 150
+#define PITCH_RUDDER_X_CORD 650
+#define PITCH_RUDDER_Y_CORD 100
+#define PITCH_RUDDER_LEN 120
 
 
 class Display {
@@ -36,6 +39,7 @@ class Display {
     void write_data(float Vbat);
     void draw_nav_ball(float pitch, float roll, float heading);
     void draw_yaw_rudder(float yaw);
+    void draw_pitch_rudder(float pitch);
     void rotate(float & x_cord, float & y_cord, float theta);
 };
 

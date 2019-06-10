@@ -17,7 +17,9 @@ void Controls::initialize(int pitch_pin, int yaw_pin){
   pinMode(up_button, INPUT_PULLDOWN);
   pinMode(down_button, INPUT_PULLDOWN);
 }
-
+//TODO:add reset function aka in update if you click once when the fin is posotioned in the oposite direction then fin resets to neutral
+//TODO: gear ratio btw sprokets for servos to turn. ADD MAX MOVEMENT
+//pitch rudders should only move about 7 deg up/down
 void Controls::update(){
   if(digitalRead(left_button) == HIGH){
     if(currently_yawing == 1){

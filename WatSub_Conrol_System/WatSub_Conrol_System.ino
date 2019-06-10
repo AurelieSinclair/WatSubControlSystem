@@ -1,4 +1,5 @@
 // Zachariah Mears
+//Cornelius
 #include "display.h"
 #include "controls.h"
 
@@ -44,6 +45,10 @@ void loop() {
   display.Update();
   display.draw_nav_ball(controls.get_pitch() - 90, controls.get_yaw()- 90, 0);
   display.draw_yaw_rudder(PI*3 /4); //get actuall angle from controls
+  display.draw_pitch_rudder(PI* 1/4);
+  display.draw_pitch_rudder(PI* 3/4);
+  display.draw_pitch_rudder(PI/2);
+  
   //display.write_data(analogRead(voltagePin));
   }
   

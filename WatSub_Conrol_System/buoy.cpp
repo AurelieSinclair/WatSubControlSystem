@@ -4,9 +4,13 @@
 
 #include "Buoy.h"
 
-Buoy::Buoy()
+Buoy::Buoy(int deadMans, int magnet, int servo)
 {
+  deadMansPin = deadMans;
+  releasePin = magnet;
+  servoPin = servo;//might be useless variable
 
+  buoyServo.attach(servoPin);
 }
 
 void Buoy::deploy()
