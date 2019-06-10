@@ -1,13 +1,13 @@
 #include "Imu.h"
 
-Imu::Imu(HardwareSerial &stream):serial(stream) {
-  serial.begin(115200);
-  while(!serial);
+Imu::Imu(){
+  Serial1.begin(115200);
+  while(!Serial1);
 }
 
 void Imu::update(){
-  while (serial.available()) {
-    data = serial.read();
+  while (Serial1.available()) {
+    data = Serial1.read();
     if((counter == 0 && data == 0xAA) || (counter > 0 && counter < 19)){
       rx[counter] = data;
       counter++;

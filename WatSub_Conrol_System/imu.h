@@ -9,10 +9,9 @@ class Imu {
     int counter;
     char rx[RX_SIZE];
     char data;
-    HardwareSerial &serial;
      
 	public:
-   Imu(HardwareSerial &stream);
+   Imu();
    void update();
    int get_pitch();
    int get_yaw();
