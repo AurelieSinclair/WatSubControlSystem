@@ -18,7 +18,7 @@ class Imu {
     counter = 0;
    }
    void initialize();
-   void update();
+   void Update();
    int get_pitch();
    int get_yaw();
    int get_roll();

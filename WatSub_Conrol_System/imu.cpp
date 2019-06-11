@@ -1,11 +1,11 @@
 #include "Imu.h"
 
-void Imu::initialize {
+void Imu::initialize() {
   Serial1.begin(115200);
   while(!Serial1);
 }
 
-void Imu::update(){
+void Imu::Update(){
   while (Serial1.available()) {
     data = Serial1.read();
     if((counter == 0 && data == 0xAA) || (counter > 0 && counter < 19)){

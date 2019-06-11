@@ -1,7 +1,10 @@
+//Aurelie Sinclair
+//Stefan Nestorovski
 // Zachariah Mears
 //Cornelius
 #include "display.h"
 #include "controls.h"
+#include "imu.h"
 
 //PA4 is chip select defined in display
 //PA3 id reset pin defined in display
@@ -20,6 +23,7 @@ const int pitchPin = PB7;
 const int yawPin = PB6;
 
 Display display;
+Imu imu;
 Controls controls(leftPin, rightPin, upPin, downPin);
 int timeOfUpdate = 0;
 int timeOfDeadMansRelease =0;
@@ -29,6 +33,7 @@ void setup() {
   pinMode(voltagePin, INPUT);
   pinMode(deadMansPin, INPUT);
   display.initialize();
+  imu.initialize();
   controls.initialize(pitchPin, yawPin);
   digitalWrite(electromagnet, LOW);
   //Serial.begin(9600);
@@ -43,6 +48,7 @@ void loop() {
   timeOfUpdate = millis();
   display.dead_mans_switch = digitalRead(deadMansPin);
   display.Update();
+  imu.Update();
   display.draw_nav_ball(controls.get_pitch() - 90, controls.get_yaw()- 90, 0);
   display.draw_yaw_rudder(PI*3 /4); //get actuall angle from controls
   display.draw_pitch_rudder(PI* 1/4);
