@@ -21,15 +21,16 @@ void Imu::Update(){
         roll |= rx[7];
       }
       counter = 0;
+    }
   }
 }
 
 int Imu::get_pitch(){
-  return pitch;
+  return pitch/100;
 }
 int Imu::get_yaw(){
-  return yaw;
+  return yaw/100;
 }
 int Imu::get_roll(){
-  return roll;
+  return roll/100;
 }

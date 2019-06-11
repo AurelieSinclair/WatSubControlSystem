@@ -5,8 +5,8 @@
 
 class Imu {
 	private:
-    int yaw, pitch, roll;
-    int counter;
+    uint16_t yaw, pitch, roll;
+    uint16_t counter;
     char rx[RX_SIZE];
     char data;
      
