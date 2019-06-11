@@ -1,6 +1,6 @@
 #include "Imu.h"
 
-Imu::Imu(){
+void Imu::initialize {
   Serial1.begin(115200);
   while(!Serial1);
 }

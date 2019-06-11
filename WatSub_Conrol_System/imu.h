@@ -11,7 +11,13 @@ class Imu {
     char data;
      
 	public:
-   Imu();
+   Imu() {
+    yaw = 0;
+    pitch = 0;
+    roll = 0;
+    counter = 0;
+   }
+   void initialize();
    void update();
    int get_pitch();
    int get_yaw();
