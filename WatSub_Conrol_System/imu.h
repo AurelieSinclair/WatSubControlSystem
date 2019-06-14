@@ -1,7 +1,9 @@
 #ifndef IMU_H
 #define IMU_H
 #define RX_SIZE 19
-#include "Arduino.h"
+#include "Wire.h"
+
+#define IMU_ADDRESS 0x4B
 
 class Imu {
 	private:
