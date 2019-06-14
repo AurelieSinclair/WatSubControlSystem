@@ -36,7 +36,8 @@ void setup() {
   imu.initialize();
   controls.initialize(pitchPin, yawPin);
   digitalWrite(electromagnet, LOW);
-  //Serial.begin(9600);
+  Serial.begin(9600);
+  while(!Serial);
 
   display.set_background();
   
@@ -49,11 +50,13 @@ void loop() {
   display.dead_mans_switch = digitalRead(deadMansPin);
   display.Update();
   imu.Update();
-  display.draw_nav_ball(controls.get_pitch() - 90, controls.get_yaw()- 90, 0);
+  Serial.println(imu.get_pitch());
+  display.draw_nav_ball(imu.get_pitch() - 90, imu.get_yaw()- 90, 0);
   display.draw_yaw_rudder(PI*3 /4); //get actuall angle from controls
-  display.draw_pitch_rudder(PI* 1/4);
-  display.draw_pitch_rudder(PI* 3/4);
+  display.draw_pitch_rudder(PI* 1.0/3);
+  //display.draw_pitch_rudder(PI/3);
   display.draw_pitch_rudder(PI/2);
+  display.battery_life(50);
   
   //display.write_data(analogRead(voltagePin));
   }
