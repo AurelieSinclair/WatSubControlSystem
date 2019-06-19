@@ -22,8 +22,11 @@ void Controls::initialize(int pitch_pin, int yaw_pin){
 //pitch rudders should only move about 7 deg up/down
 void Controls::update(){
   if(digitalRead(left_button) == HIGH){
-    if(currently_yawing == 1){
-      yaw = YAW_CENTER_POS + INVERT_YAW * (INSTANT_YAW_AMOUNT + (millis() - yaw_start_time) * YAW_RATE);
+    if(currently_yawing == 2){
+      yaw = 0;
+    }
+    else if(currently_yawing == 1){
+        yaw = YAW_CENTER_POS + INVERT_YAW * (INSTANT_YAW_AMOUNT + (millis() - yaw_start_time) * YAW_RATE);
     }
     else{
       currently_yawing = 1;
