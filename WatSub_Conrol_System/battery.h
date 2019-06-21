@@ -3,23 +3,19 @@
 */
 
 #ifndef Battery_h
-#define Buoy_h//what?
+#define Battery_h
 
-#define FULL_CHARGE 29.5
-#define EMPTY_CHARGE 19.0
+#define FULL_CHARGE 26
+#define CLOSE_TO_EMPTY_CHARGE 23.5
+#define EMPTY_CHARGE 19.2
 
 class Battery
 {
   public:
     Battery();
-<<<<<<< Updated upstream
-    void get_SOC(int highPin, int groundPin);
-    int get_life();
-=======
     void readVoltage(float v);
-    int get_SOC();
+    int get_life();
 
->>>>>>> Stashed changes
   private:
     float pinVoltage = 0;
     float realVoltage = 0;
